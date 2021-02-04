@@ -24,7 +24,7 @@ Route::get('/ping', function (Request $request) {
 
 Route::get('/notes', 'App\Http\Controllers\NoteController@all'); //Ver todas as anotações
 
-// Route::get('/note/{id}',''); //Ver anotação específica
+Route::get('/note/{id}','App\Http\Controllers\NoteController@one'); //Ver anotação específica
 
 // Route::post('/note', ''); //Adicionando a nota
 
