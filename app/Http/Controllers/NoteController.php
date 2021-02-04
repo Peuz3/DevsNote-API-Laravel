@@ -24,14 +24,39 @@ class NoteController extends Controller
         return $this->arrayReturn;
     }
 
-    public function one($id){
+    public function one($id)
+    {
 
         $note = Note::find($id);
 
-        if($note){
+        if ($note) {
             $this->arrayReturn['result'] = $note;
-        }else{
+        } else {
             $this->arrayReturn['error'] = "ID não encontrado!";
+        }
+
+        return $this->arrayReturn;
+    }
+
+    public function new(Request $request)
+    {
+        $title = $request->input('title');
+        $body = $request->input('body');
+
+        if ($title && $body) {
+            $note = new Note();
+            $note->title = $title;
+            $note->body = $body;
+            $note->save();
+
+            //Retorno o objeto dentro do Result
+            $this->arrayReturn['result'] = [
+                'id' => $note->id,
+                'title' => $title,
+                'body' => $body
+            ];
+        } else {
+            $this->arrayReturn['error'] = "Campos não enviados!";
         }
 
         return $this->arrayReturn;

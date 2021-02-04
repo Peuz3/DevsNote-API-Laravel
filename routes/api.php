@@ -26,7 +26,7 @@ Route::get('/notes', 'App\Http\Controllers\NoteController@all'); //Ver todas as 
 
 Route::get('/note/{id}','App\Http\Controllers\NoteController@one'); //Ver anotação específica
 
-// Route::post('/note', ''); //Adicionando a nota
+Route::post('/note', 'App\Http\Controllers\NoteController@new'); //Adicionando a nota
 
 // Route::put('/note/{id}',''); //Altera/Atualiza a nota
 
