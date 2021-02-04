@@ -22,7 +22,7 @@ Route::get('/ping', function (Request $request) {
     return ['pong' => true];
 });
 
-// Route::get('/notes', ''); //Ver todas as anotações
+Route::get('/notes', 'App\Http\Controllers\NoteController@all'); //Ver todas as anotações
 
 // Route::get('/note/{id}',''); //Ver anotação específica
 
