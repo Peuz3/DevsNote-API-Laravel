@@ -80,10 +80,23 @@ class NoteController extends Controller
                     'body' => $body
                 ];
             } else {
-                $this->arrayReturn['error'] = "ID Inexistente!";
+                $this->arrayReturn['error'] = "ID inexistente!";
             }
         } else {
             $this->arrayReturn['error'] = "Campos não enviados";
+        }
+
+        return $this->arrayReturn;
+    }
+
+    public function delete($id)
+    {
+        $note = Note::find($id);
+
+        if ($note) {
+            $note->delete();
+        } else {
+            $this->arrayReturn['error'] = "ID inexistente!";
         }
 
         return $this->arrayReturn;

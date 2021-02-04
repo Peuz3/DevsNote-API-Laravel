@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//Apenas testando o api
 Route::get('/ping', function (Request $request) {
     return ['pong' => true];
 });
@@ -30,4 +30,4 @@ Route::post('/note', 'App\Http\Controllers\NoteController@new'); //Adicionando a
 
 Route::put('/note/{id}','App\Http\Controllers\NoteController@edit'); //Altera/Atualiza a nota
 
-// Route::delete('/note/{id}',''); //Deletar a nota
+Route::delete('/note/{id}','App\Http\Controllers\NoteController@delete'); //Deletar a nota
