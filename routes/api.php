@@ -17,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/ping', function (Request $request) {
+    return ['pong' => true];
+});
+
+// Route::get('/notes', ''); //Ver todas as anotações
+
+// Route::get('/note/{id}',''); //Ver anotação específica
+
+// Route::post('/note', ''); //Adicionando a nota
+
+// Route::put('/note/{id}',''); //Altera/Atualiza a nota
+
+// Route::delete('/note/{id}',''); //Deletar a nota
