@@ -28,6 +28,6 @@ Route::get('/note/{id}','App\Http\Controllers\NoteController@one'); //Ver anota√
 
 Route::post('/note', 'App\Http\Controllers\NoteController@new'); //Adicionando a nota
 
-// Route::put('/note/{id}',''); //Altera/Atualiza a nota
+Route::put('/note/{id}','App\Http\Controllers\NoteController@edit'); //Altera/Atualiza a nota
 
 // Route::delete('/note/{id}',''); //Deletar a nota
